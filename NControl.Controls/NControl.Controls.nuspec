@@ -5,7 +5,7 @@
     <version>0.9.4.1</version>
     <authors>Christian Falch</authors>
     <owners>Christian Falch</owners>
-    <licenseUrl>https://github.com/chrfalch/NControl.Controls/blob/master/LICENSE.md</licenseUrl>
+    <licenseUrl>https://github.com/chrfalch/NControl.Controls/blob/develop/LICENSE</licenseUrl>
     <projectUrl>https://github.com/chrfalch/NControl.Controls/</projectUrl>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
