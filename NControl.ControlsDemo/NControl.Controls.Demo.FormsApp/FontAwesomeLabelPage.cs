@@ -45,6 +45,6 @@ namespace NControl.Controls.Demo.FormsApp
 
             Content = new ScrollView { Margin = 14, Content = rowLayout };
 		}
-	}
+    }
 }
 

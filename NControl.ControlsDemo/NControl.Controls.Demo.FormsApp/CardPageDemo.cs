@@ -100,6 +100,7 @@ namespace NControl.Controls.Demo.FormsApp
                     var touchLabel = new Label { Text = "Click me: " + touchCount.ToString() };
                     var touchButton = new NControlView { HeightRequest = 65, Content = touchLabel };
                     touchButton.OnTouchesBegan += (s, e) => {
+                        
                         touchCount++;
                         touchLabel.Text = "Click me: " + touchCount.ToString();
                     };
@@ -132,7 +133,15 @@ namespace NControl.Controls.Demo.FormsApp
 					page.BindingContext = this.BindingContext;
 					var currentApp = Xamarin.Forms.Application.Current;
 					closeCardButton.Command = new Command( async () => {
-						await page.CloseAsync ();
+					    try
+					    {
+                            // Work in progress: UWP currently double-taps on buttons
+					        await page.CloseAsync();
+
+                        }
+					    catch (Exception e)
+					    {
+					    }
 						if (currentApp != Xamarin.Forms.Application.Current)
 							throw new InvalidOperationException ("Application.Current changed");
 					});
