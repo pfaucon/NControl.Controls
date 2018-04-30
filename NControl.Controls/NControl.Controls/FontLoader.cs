@@ -32,50 +32,64 @@ using System.Linq;
 using System.IO;
 using System.Runtime.InteropServices;
 using NControl.Controls.Fonts;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NControl.Controls
 {
-	/// <summary>
-	/// Implements a simple cross-platform font loader with callbacks that can be used by platform implementations
-	/// to register fonts on the device. Pass a list of assemblies to the LoadFonts method where fonts are embedded
-	/// as resources and a callback for registering fonts.
-	/// </summary>
-	public static class FontLoader
-	{
-		/// <summary>
-		/// The initialized flag
-		/// </summary>
-		private static bool _initialized = false;
+    /// <summary>
+    /// Implements a simple cross-platform font loader with callbacks that can be used by platform implementations
+    /// to register fonts on the device. Pass a list of assemblies to the LoadFonts method where fonts are embedded
+    /// as resources and a callback for registering fonts.
+    /// </summary>
+    public static class FontLoader
+    {
+        /// <summary>
+        /// The initialized flag
+        /// </summary>
+        private static bool _initialized = false;
 
-		/// <summary>
-		/// initializes
-		/// </summary>
-		public static void LoadFonts (IEnumerable<Assembly> assemblies, Action<string, Stream> registerFont)
-		{
-			if (_initialized)
-				return;
+        /// <summary>
+        /// initializes
+        /// </summary>
+        public static void LoadFonts(IEnumerable<Assembly> assemblies, Func<string, Stream, Task<bool>> registerFont)
+        {
+            if (_initialized)
+                return;
 
-			_initialized = true;
+            _initialized = true;
 
-			foreach (var assembly in assemblies) {
+            foreach (var assembly in assemblies)
+            {
 
-				if (assembly.IsDynamic)
-					continue;				
-					
-				// Find all resources ending with ttf 
-				foreach (var name in assembly.GetManifestResourceNames()) {
+                if (assembly.IsDynamic)
+                    continue;
 
-					if (name.ToLowerInvariant ().EndsWith (".ttf")) 
-					{
-						using (var s = assembly.GetManifestResourceStream (name)) {
-							var fontName = TTFFont.GetName (s);					
-							s.Position = 0;
-							registerFont (Path.GetFileName (fontName), s);
-						}
-					}
-				}
-			}
-		}
-	}
+                // Find all resources ending with ttf 
+                foreach (var name in assembly.GetManifestResourceNames())
+                {
+
+                    if (name.ToLowerInvariant().EndsWith(".ttf"))
+                    {
+                        using (var s = assembly.GetManifestResourceStream(name))
+                        {
+                            var fontName = TTFFont.GetName(s);
+                            s.Position = 0;
+                            var output = registerFont(Path.GetFileName(fontName), s);
+                            AwaitedTasks.Add(output);
+                        }
+                    }
+                }
+            }
+            Task.WhenAll(AwaitedTasks).ContinueWith(t =>
+            {
+                src.SetResult(true);
+            });
+        }
+
+        private static IList<Task<bool>> AwaitedTasks = new List<Task<bool>>();
+        private static TaskCompletionSource<bool> src = new TaskCompletionSource<bool>();
+        public static Task<bool> FontsLoaded = src.Task;
+    }
 }
 

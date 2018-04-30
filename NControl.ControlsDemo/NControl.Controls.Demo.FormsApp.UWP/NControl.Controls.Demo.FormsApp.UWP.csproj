@@ -141,9 +141,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Ncontrol.Controls.UWP\Ncontrol.Controls.UWP.csproj">
+    <ProjectReference Include="..\..\NControl.Controls\Ncontrol.Controls.UWP\NControl.Controls.UWP.csproj">
       <Project>{d260f204-a55f-4c75-a7ba-3d99dcafc81e}</Project>
-      <Name>Ncontrol.Controls.UWP</Name>
+      <Name>NControl.Controls.UWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\NControl.Controls\NControl.Controls\NControl.Controls.csproj">
       <Project>{239d7367-336f-4372-93a1-5cc4bd2414fe}</Project>

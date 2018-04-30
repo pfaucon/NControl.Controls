@@ -108,6 +108,8 @@
   <ItemGroup>
     <Compile Include="CardPageHelper.cs" />
     <Compile Include="CardPageRenderer.cs" />
+    <Compile Include="ExtendedEntryRenderer.cs" />
+    <Compile Include="FontAwareButtonRenderer.cs" />
     <Compile Include="FontAwareLabelRenderer.cs" />
     <Compile Include="Ncontrols.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,7 +127,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NControl.Controls\NControl.Controls\NControl.Controls.csproj">
+    <ProjectReference Include="..\NControl.Controls\NControl.Controls.csproj">
       <Project>{239d7367-336f-4372-93a1-5cc4bd2414fe}</Project>
       <Name>NControl.Controls</Name>
     </ProjectReference>

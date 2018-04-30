@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.8.1">
        <id>NControl.Controls</id>
-    <version>0.9.4.1</version>
+    <version>0.9.6.2</version>
     <authors>Christian Falch</authors>
     <owners>Christian Falch</owners>
     <licenseUrl>https://github.com/chrfalch/NControl.Controls/blob/master/LICENSE.md</licenseUrl>
@@ -17,9 +17,9 @@
     <copyright>Copyright 2015</copyright>
     <tags>xamarin, pcl, xam.pcl, android, xamarin.forms, ios</tags>
        <dependencies>
-         <dependency id="Xamarin.Forms" version="2.3.3.180" />
-         <dependency id="NGraphics" version="0.4.0" />
-         <dependency id="NControl" version="0.9.1" />
+         <dependency id="Xamarin.Forms" version="2.5.1.444934" />
+         <dependency id="NGraphics" version="0.5.0-beta1" />
+         <dependency id="NControl" version="999.0.2" />
        </dependencies>
    </metadata>
    <files>
@@ -30,17 +30,13 @@
      <file src="NControl.Controls.Droid/bin/Release/NControl.Controls.Droid.dll" target="lib\MonoAndroid10\NControl.Controls.Droid.dll" />
      <file src="NControl.Controls.Droid/bin/Release/NControl.Controls.dll" target="lib\MonoAndroid10\NControl.Controls.dll" />
 
-     <!--Xamarin.WP80-->
-     <file src="NControl.Controls.WP80/Bin/Release/NControl.Controls.WP80.dll" target="lib\wp80\NControl.Controls.WP80.dll" />
-     <file src="NControl.Controls.WP80/Bin/Release/NControl.Controls.dll" target="lib\wp80\NControl.Controls.dll" />
-     
-     <!--Xamarin.WP81-->
-    <file src="NControl.Controls.WP81/Bin/Release/NControl.Controls.WP81.dll" target="lib\wp81\NControl.Controls.WP81.dll" />
-    <file src="NControl.Controls.WP81/Bin/Release/NControl.Controls.dll" target="lib\wp81\NControl.Controls.dll" />
-
     <!--Xamarin.iOSUnified-->
      <file src="NControl.Controls.iOS/bin/Release/NControl.Controls.iOS.dll" target="lib\Xamarin.iOS10\NControl.Controls.iOS.dll" />
      <file src="NControl.Controls.iOS/bin/Release/NControl.Controls.dll" target="lib\Xamarin.iOS10\NControl.Controls.dll" />
-      
+
+     <!--Universal Windows-->
+     <file src="NControl.Controls.UWP/bin/Release/NControl.Controls.UWP.dll" target="lib\uap10.0\NControl.Controls.UWP.dll" />
+     <file src="NControl.Controls.UWP/bin/Release/NControl.Controls.dll" target="lib\uap10.0\NControl.Controls.dll" />
+     
    </files>
 </package>

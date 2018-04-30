@@ -37,7 +37,8 @@ namespace NControl.Controls.Droid
 				}
 
 				Typefaces[fontName] = Typeface.CreateFromFile(fontFilename);
-			});
+                return System.Threading.Tasks.Task.FromResult(true);
+            });
 		}
 	}
 }
