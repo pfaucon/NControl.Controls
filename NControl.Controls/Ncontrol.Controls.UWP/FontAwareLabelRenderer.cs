@@ -39,12 +39,18 @@ namespace NControl.Controls.UWP
 
         private void UpdateFont()
         {
-            var fontName = Element.FontFamily;
-            if (string.IsNullOrWhiteSpace(fontName))
-                return;
-            
-            if (NControls.Typefaces.ContainsKey(fontName))
-                Control.FontFamily = NControls.Typefaces[fontName];
+            FontLoader.FontsLoaded.ContinueWith(r =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    var fontName = Element?.FontFamily;
+                    if (string.IsNullOrWhiteSpace(fontName))
+                        return;
+
+                    if (Control != null && NControls.Typefaces.ContainsKey(fontName))
+                        Control.FontFamily = NControls.Typefaces[fontName];
+                });
+            });
         }
 
     }

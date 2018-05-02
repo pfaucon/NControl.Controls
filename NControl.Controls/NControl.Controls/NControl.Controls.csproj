@@ -33,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,8 +69,8 @@
     <EmbeddedResource Include="Resources\Fonts\Material-Design-Iconic-Font.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="NControl, Version=1.0.0.17885, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NControl.999.0.2\lib\portable-net45+wp8+wp80+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\NControl.dll</HintPath>
+    <Reference Include="NControl, Version=1.0.0.16563, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NControl.999.0.3\lib\portable-net45+wp8+wp80+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\NControl.dll</HintPath>
     </Reference>
     <Reference Include="NGraphics, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NGraphics.0.5.0-beta1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\NGraphics.dll</HintPath>

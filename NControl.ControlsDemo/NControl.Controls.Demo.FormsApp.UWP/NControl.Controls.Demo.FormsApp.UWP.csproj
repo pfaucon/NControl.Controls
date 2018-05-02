@@ -131,10 +131,10 @@
       <Version>1.0.21</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.8</Version>
+      <Version>6.0.1</Version>
     </PackageReference>
     <PackageReference Include="NControl">
-      <Version>999.0.2</Version>
+      <Version>999.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>2.5.1.444934</Version>

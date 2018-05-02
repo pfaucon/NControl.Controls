@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI.Xaml.Media;
 
@@ -29,10 +31,11 @@ namespace NControl.Controls.UWP
                 var fileName = FilenameForFont(fontName);
                 var fontString = FontStringForFont(fontName);
 
-                var storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                var storageFolder = ApplicationData.Current.LocalFolder;
                 await storageFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+
                 var sampleFile = await storageFolder.GetFileAsync(fileName);
-                var fileStream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+                var fileStream = await sampleFile.OpenAsync(FileAccessMode.ReadWrite);
 
                 using (var outputStream = fileStream.GetOutputStreamAt(0))
                 {
@@ -47,6 +50,7 @@ namespace NControl.Controls.UWP
 
                 var fontFamily = new FontFamily(fontString);
                 Typefaces[fontName] = fontFamily;
+                return true;
             });
         }
 
