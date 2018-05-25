@@ -53,7 +53,8 @@ namespace NControl.Controls.Demo.FormsApp.UWP
 
                 var rendererAssemblies = new[]
                 {
-                    typeof(NControl.UWP.NControlViewRenderer).GetTypeInfo().Assembly
+                    typeof(NControl.UWP.NControlViewRenderer).GetTypeInfo().Assembly,
+                    typeof(NControl.Controls.UWP.FontAwareLabelRenderer).GetTypeInfo().Assembly
 
                 };
                 Xamarin.Forms.Forms.Init(e, rendererAssemblies);

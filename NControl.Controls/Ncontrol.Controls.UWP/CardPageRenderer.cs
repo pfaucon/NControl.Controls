@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ncontrol.Controls.UWP;
-using NControl.Controls;
+﻿using NControl.Controls;
+using NControl.Controls.UWP;
 using Xamarin.Forms.Platform.UWP;
-using Xamarin.Forms.PlatformConfiguration;
 
 [assembly: ExportRenderer(typeof(CardPage), typeof(CardPageRenderer))]
-namespace Ncontrol.Controls.UWP
+namespace NControl.Controls.UWP
 {
     /// <summary>
     /// Card page renderer.

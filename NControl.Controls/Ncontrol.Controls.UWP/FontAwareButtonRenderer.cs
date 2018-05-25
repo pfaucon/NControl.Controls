@@ -1,10 +1,9 @@
-﻿using Ncontrol.Controls.UWP;
-using NControl.Controls.UWP;
+﻿using NControl.Controls.UWP;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(Button), typeof(FontAwareButtonRenderer))]
-namespace Ncontrol.Controls.UWP
+namespace NControl.Controls.UWP
 {
     /// <summary>
     /// Custom font label renderer.

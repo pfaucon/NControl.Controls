@@ -1,11 +1,11 @@
-﻿using Ncontrol.Controls.UWP;
+﻿using NControl.Controls.UWP;
 using NControl.Controls;
 using NControl.Controls.UWP;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ExportRenderer(typeof(ExtendedEntry), typeof(ExtendedEntryRenderer))]
-namespace Ncontrol.Controls.UWP
+namespace NControl.Controls.UWP
 {
     public class ExtendedEntryRenderer : EntryRenderer
     {
